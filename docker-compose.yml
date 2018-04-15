@@ -13,11 +13,11 @@ services:
       - db
 
   db:
-    image: mysql:5.7
+    image: postgres
+    ports:
+      - "5432:5432"
     volumes:
-      - db-data:/var/lib/mysql
-    environment:
-      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      - db-data:/var/lib/postgresql/data
 
 volumes:
   bundle-data:
