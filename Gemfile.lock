@@ -203,6 +203,8 @@ DEPENDENCIES
   byebug
   coffee-rails
   factory_bot_rails
+  graphiql-rails
+  graphql
   pg (~> 0.18)
   pry-byebug
   pry-rails
