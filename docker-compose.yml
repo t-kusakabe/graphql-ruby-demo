@@ -1,0 +1,24 @@
+version: "3"
+services:
+  app:
+    build: .
+    container_name: "graphql-ruby-demo"
+    ports:
+      - "3000:3000"
+    command: bundle exec puma
+    volumes:
+      - .:/home/graphql-ruby-demo
+      - bundle-data:/bundle
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+volumes:
+  bundle-data:
+  db-data:
